@@ -17,12 +17,17 @@ interest_rate = 0.05  # Example interest rate
 # Define the cash flows for two scenarios
 cash_flows_scenario_1 = [10, 10, 10, 10, 10, 10, 10, 10, 10 ,10]  # Example cash flows for scenario 1
 cash_flows_scenario_2 = [-5, -7, 4, 0, 4, 15, 25, 40, 50, 55]  # Example cash flows for scenario 2
+
+
 # Calculate NPV for each scenario
 npvs_scenario_1 = calculate_npv(cash_flows_scenario_1, interest_rate)
 npvs_scenario_2 = calculate_npv(cash_flows_scenario_2, interest_rate)
 
 data1 = pd.DataFrame(npvs_scenario_1)
 data2 = pd.DataFrame(npvs_scenario_2)
+
+npArray = np.Array([npvs_scenario_1, npvs_scenario_2])
+dataFull = pd.Dataframe(npArray)
 
 #data = data.set_index()
 st.bar_chart(data1)
